@@ -1,6 +1,8 @@
 // Importing required modules
 const cors = require('cors');
 const express = require('express');
+const mongoose = require('mongoose');
+
 
 // parse env variables
 require('dotenv').config();
@@ -14,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 // Static folder
 app.use(express.static(__dirname + '/views/'));
@@ -23,7 +25,7 @@ app.use(express.static(__dirname + '/views/'));
 app.use('/api', require('./routes/api'));
 
 // Listening to port
-app.listen(port);
-console.log(`Listening On http://localhost:${port}/api`);
-
+app.listen(port , () => {
+    console.log(`Listening On http://localhost:${port}`);
+});
 module.exports = app;
