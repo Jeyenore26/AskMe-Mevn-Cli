@@ -1,0 +1,8 @@
+{
+  "name": "ask-me",
+  "template": "Default",
+  "isConfigured": {
+    "client": false,
+    "server": false
+  }
+}
